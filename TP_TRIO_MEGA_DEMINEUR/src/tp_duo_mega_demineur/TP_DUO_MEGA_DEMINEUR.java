@@ -15,6 +15,7 @@ public class TP_DUO_MEGA_DEMINEUR {
      */
     public static void main(String[] args) {
         int test;
+        int test2;
     }
     
 }
