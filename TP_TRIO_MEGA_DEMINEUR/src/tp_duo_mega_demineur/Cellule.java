@@ -38,7 +38,7 @@ public void revelerCellule(){
         if (Presence_Bombe==true && devoilee==true ){
             return "B";
         }
-        if()
+        return "";
     }
 
 }
