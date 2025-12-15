@@ -14,7 +14,7 @@ public class TP_DUO_MEGA_DEMINEUR {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        int test;
     }
     
 }
