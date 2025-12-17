@@ -27,9 +27,9 @@ public String verifierVictoire(){
         return "Victoire";
     }
     else{
-        return 
+        return "";
     }
-        
+     
 }
 
 public void StartPartie(){
