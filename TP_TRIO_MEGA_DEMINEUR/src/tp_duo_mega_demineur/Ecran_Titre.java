@@ -122,7 +122,7 @@ public class Ecran_Titre extends javax.swing.JFrame {
         Nb_bombes_label.setText("Nombre de bombes :");
         getContentPane().add(Nb_bombes_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 350, -1, -1));
 
-        Nb_lignes_texte.setText("Nombre de bombes uniquement");
+        Nb_lignes_texte.setText("Nb de bombes uniquement");
         Nb_lignes_texte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Nb_lignes_texteActionPerformed(evt);
@@ -130,7 +130,7 @@ public class Ecran_Titre extends javax.swing.JFrame {
         });
         getContentPane().add(Nb_lignes_texte, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, -1, -1));
 
-        Nb_colones_texte.setText("Nombre de colones uniquement");
+        Nb_colones_texte.setText("Nb de colones uniquement");
         Nb_colones_texte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Nb_colones_texteActionPerformed(evt);
@@ -138,7 +138,7 @@ public class Ecran_Titre extends javax.swing.JFrame {
         });
         getContentPane().add(Nb_colones_texte, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 310, -1, -1));
 
-        Nb_bombes_texte.setText("Nombres de bombes uniquement");
+        Nb_bombes_texte.setText("Nb de bombes uniquement");
         Nb_bombes_texte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Nb_bombes_texteActionPerformed(evt);

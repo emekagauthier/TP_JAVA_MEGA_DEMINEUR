@@ -121,7 +121,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="Nb_lignes_texte">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Nombre de bombes uniquement"/>
+        <Property name="text" type="java.lang.String" value="Nb de bombes uniquement"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Nb_lignes_texteActionPerformed"/>
@@ -134,7 +134,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="Nb_colones_texte">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Nombre de colones uniquement"/>
+        <Property name="text" type="java.lang.String" value="Nb de colones uniquement"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Nb_colones_texteActionPerformed"/>
@@ -147,7 +147,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="Nb_bombes_texte">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Nombres de bombes uniquement"/>
+        <Property name="text" type="java.lang.String" value="Nb de bombes uniquement"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Nb_bombes_texteActionPerformed"/>
