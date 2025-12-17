@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package tp_duo_mega_demineur;
+import Class_Metier.Cellule;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 
