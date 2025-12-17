@@ -59,7 +59,7 @@ public class Ecran_Titre extends javax.swing.JFrame {
         });
         getContentPane().add(Quitter_EcranTitre_bouton, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 480, -1, -1));
 
-        Image_EcranTitre_label.setText("jLabel1");
+        Image_EcranTitre_label.setText("Image Logo EPF");
         getContentPane().add(Image_EcranTitre_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 300, -1, -1));
 
         pack();
