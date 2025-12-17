@@ -17,6 +17,49 @@ public class Ecran_Défaite extends javax.swing.JFrame {
      */
     public Ecran_Défaite() {
         initComponents();
+        setLocationRelativeTo(null);
+        setImageToLabelKeepRatio(Image_Perdu_label, "/Images/Perdu.jpg");
+    }
+    private void setImageToLabelKeepRatio(javax.swing.JLabel label, String resourcePath) {
+        java.net.URL url = getClass().getResource(resourcePath);
+        if (url == null) {
+            System.err.println("Ressource introuvable : " + resourcePath);
+            return;
+        }
+        javax.swing.ImageIcon originalIcon = new javax.swing.ImageIcon(url);
+        if (label.getWidth() <= 0 || label.getHeight() <= 0) {
+            label.setIcon(originalIcon); // icône provisoire
+            label.addComponentListener(new java.awt.event.ComponentAdapter() {
+                @Override
+                public void componentResized(java.awt.event.ComponentEvent e) {
+                    scaleAndSetIconKeepRatio(label, originalIcon);
+                }
+                @Override
+                public void componentShown(java.awt.event.ComponentEvent e) {
+                    scaleAndSetIconKeepRatio(label, originalIcon);
+                }
+            });
+            return;
+        }
+        scaleAndSetIconKeepRatio(label, originalIcon);
+    }
+    private void scaleAndSetIconKeepRatio(javax.swing.JLabel label, javax.swing.ImageIcon originalIcon) {
+        int labelW = label.getWidth();
+        int labelH = label.getHeight();
+        if (labelW <= 0 || labelH <= 0) {
+            return;
+        }
+        int imgW = originalIcon.getIconWidth();
+        int imgH = originalIcon.getIconHeight();
+        double scale = Math.min((double) labelW / imgW, (double) labelH / imgH);
+        int newW = Math.max(1, (int) (imgW * scale));
+        int newH = Math.max(1, (int) (imgH * scale));
+        java.awt.Image scaled = originalIcon.getImage()
+                .getScaledInstance(newW, newH, java.awt.Image.SCALE_SMOOTH);
+        label.setIcon(new javax.swing.ImageIcon(scaled));
+        label.setText("");
+        label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label.setVerticalAlignment(javax.swing.SwingConstants.CENTER);
     }
 
     /**
@@ -32,6 +75,7 @@ public class Ecran_Défaite extends javax.swing.JFrame {
         Retour_EcranTitre_Défaite_bouton = new javax.swing.JButton();
         RelancerPartie_Défaite_bouton = new javax.swing.JButton();
         QuitterDéfaite_bouton = new javax.swing.JButton();
+        Image_Perdu_label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 600));
@@ -66,6 +110,9 @@ public class Ecran_Défaite extends javax.swing.JFrame {
             }
         });
         getContentPane().add(QuitterDéfaite_bouton, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 490, -1, -1));
+
+        Image_Perdu_label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Perdu.jpg"))); // NOI18N
+        getContentPane().add(Image_Perdu_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 290, 220));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -115,6 +162,7 @@ public class Ecran_Défaite extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Défaite_label;
+    private javax.swing.JLabel Image_Perdu_label;
     private javax.swing.JButton QuitterDéfaite_bouton;
     private javax.swing.JButton RelancerPartie_Défaite_bouton;
     private javax.swing.JButton Retour_EcranTitre_Défaite_bouton;

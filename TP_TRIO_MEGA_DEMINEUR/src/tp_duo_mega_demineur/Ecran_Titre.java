@@ -9,7 +9,7 @@ package tp_duo_mega_demineur;
  * @author Alexander
  */
 public class Ecran_Titre extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Ecran_Titre.class.getName());
 
     /**
@@ -17,8 +17,51 @@ public class Ecran_Titre extends javax.swing.JFrame {
      */
     public Ecran_Titre() {
         initComponents();
+        setLocationRelativeTo(null);
+        setImageToLabelKeepRatio(Image_EcranTitre_label, "/Images/EPF_logo_2021.png");
     }
 
+    private void setImageToLabelKeepRatio(javax.swing.JLabel label, String resourcePath) {
+        java.net.URL url = getClass().getResource(resourcePath);
+        if (url == null) {
+            System.err.println("Ressource introuvable : " + resourcePath);
+            return;
+        }
+        javax.swing.ImageIcon originalIcon = new javax.swing.ImageIcon(url);
+        if (label.getWidth() <= 0 || label.getHeight() <= 0) {
+            label.setIcon(originalIcon); // icône provisoire
+            label.addComponentListener(new java.awt.event.ComponentAdapter() {
+                @Override
+                public void componentResized(java.awt.event.ComponentEvent e) {
+                    scaleAndSetIconKeepRatio(label, originalIcon);
+                }
+                @Override
+                public void componentShown(java.awt.event.ComponentEvent e) {
+                    scaleAndSetIconKeepRatio(label, originalIcon);
+                }
+            });
+            return;
+        }
+        scaleAndSetIconKeepRatio(label, originalIcon);
+    }
+    private void scaleAndSetIconKeepRatio(javax.swing.JLabel label, javax.swing.ImageIcon originalIcon) {
+        int labelW = label.getWidth();
+        int labelH = label.getHeight();
+        if (labelW <= 0 || labelH <= 0) {
+            return;
+        }
+        int imgW = originalIcon.getIconWidth();
+        int imgH = originalIcon.getIconHeight();
+        double scale = Math.min((double) labelW / imgW, (double) labelH / imgH);
+        int newW = Math.max(1, (int) (imgW * scale));
+        int newH = Math.max(1, (int) (imgH * scale));
+        java.awt.Image scaled = originalIcon.getImage()
+                .getScaledInstance(newW, newH, java.awt.Image.SCALE_SMOOTH);
+        label.setIcon(new javax.swing.ImageIcon(scaled));
+        label.setText("");
+        label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label.setVerticalAlignment(javax.swing.SwingConstants.CENTER);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -59,8 +102,10 @@ public class Ecran_Titre extends javax.swing.JFrame {
         });
         getContentPane().add(Quitter_EcranTitre_bouton, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 480, -1, -1));
 
+        Image_EcranTitre_label.setBackground(new java.awt.Color(255, 255, 255));
+        Image_EcranTitre_label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/EPF_logo_2021.png"))); // NOI18N
         Image_EcranTitre_label.setText("Image Logo EPF");
-        getContentPane().add(Image_EcranTitre_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 300, -1, -1));
+        getContentPane().add(Image_EcranTitre_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 110, 90));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -68,7 +113,7 @@ public class Ecran_Titre extends javax.swing.JFrame {
     private void Jouer_EcranTitre_boutonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jouer_EcranTitre_boutonActionPerformed
         // TODO add your handling code here:
         Ecran_Jeu accueil = new Ecran_Jeu();
-        accueil.setLocationRelativeTo(this); 
+        accueil.setLocationRelativeTo(this);
         accueil.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Jouer_EcranTitre_boutonActionPerformed
