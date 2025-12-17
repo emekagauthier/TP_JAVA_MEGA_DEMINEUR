@@ -21,7 +21,9 @@ public boolean getPresenceBombe(){
 public int getNbBombesAdjacentes(){
     return nbBombesAdjacentes;
 }
-
+public boolean getdevoilee(){
+    return devoilee;
+}
 //Méthode
 public void placerBombe(){
     Presence_Bombe=true;
