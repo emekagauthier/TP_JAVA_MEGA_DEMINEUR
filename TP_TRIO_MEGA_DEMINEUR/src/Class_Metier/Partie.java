@@ -23,10 +23,7 @@ public void tourDeJeu(int ligne, int colonne){
     
 }
 public String verifierVictoire(){
-    if(partie.toutesCellulesRevelees()==true){
-        return "Victoire";
-    }
-return "";    
+    return "";    
 }
 
 public void StartPartie(){
