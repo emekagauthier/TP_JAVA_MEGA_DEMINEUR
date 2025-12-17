@@ -146,4 +146,21 @@ public class GrilleDeJeu {
 
         }
     }
+
+    @Override
+    public String toString() {
+        String r = super.toString();
+        String chaine = "|";
+        for (int i = 0; i <nbLignes ; i++) {
+            for (int j = 0; j < nbColonnes; j++) {
+                if (j != nbColonnes) {
+                    chaine += r;
+                } else {
+                    chaine += "|\n";
+                }
+            }
+        }
+        return chaine;
+    }
+
 }
