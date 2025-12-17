@@ -4,11 +4,13 @@
  */
 package tp_duo_mega_demineur;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author emeka
  */
-public class Cellule {
+public class Cellule extends JButton {
 // Attribut principaux Class Cellule 
 private boolean Presence_Bombe;
 private boolean devoilee ;
