@@ -31,6 +31,7 @@ public class Ecran_Titre extends javax.swing.JFrame {
         Titre_label = new javax.swing.JLabel();
         Jouer_EcranTitre_bouton = new javax.swing.JButton();
         Quitter_EcranTitre_bouton = new javax.swing.JButton();
+        Image_EcranTitre_label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 600));
@@ -57,6 +58,9 @@ public class Ecran_Titre extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Quitter_EcranTitre_bouton, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 480, -1, -1));
+
+        Image_EcranTitre_label.setText("jLabel1");
+        getContentPane().add(Image_EcranTitre_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 300, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -101,6 +105,7 @@ public class Ecran_Titre extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Image_EcranTitre_label;
     private javax.swing.JButton Jouer_EcranTitre_bouton;
     private javax.swing.JButton Quitter_EcranTitre_bouton;
     private javax.swing.JLabel Titre_label;
