@@ -30,7 +30,7 @@ public void revelerCellule(){
     devoilee=true;
 }
 public void setNbBombesAdjacentes(int nb_Bombe){
-    nbBombesAdjacentes = nb_Bombe ;
+    nbBombesAdjacentes=nb_Bombe ;
 }
 
     @Override
