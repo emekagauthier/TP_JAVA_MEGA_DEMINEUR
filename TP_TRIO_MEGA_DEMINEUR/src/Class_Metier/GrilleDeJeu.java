@@ -77,13 +77,13 @@ public class GrilleDeJeu {
         return grille[i][j].getPresenceBombe();
     }
 
-    public boolean toutesCellulesRevelees() {
+    public String toutesCellulesRevelees() {
         int val = (nbLignes * nbColonnes) - nbBombes;
         int nb = 0;
         for (int i = 0; i < nbLignes; i++) {
             for (int j = 0; j < nbColonnes; j++) {
                 if (grille[i][j].getdevoilee() == true & getPresenceBombe(i, j) == true) {
-                    return false;
+                    return "perdu";
                 }
                 if (grille[i][j].getdevoilee() == true & getPresenceBombe(i, j) == false) {
                     nb += 1;
@@ -92,9 +92,9 @@ public class GrilleDeJeu {
             }
         }
         if (nb == val) {
-            return true;
+            return "gagné";
         }
-        return false;
+        return "pas fini";
     }
 
     //Methode Reveler Cellule
