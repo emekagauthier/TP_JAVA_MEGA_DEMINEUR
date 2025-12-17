@@ -82,10 +82,16 @@ public class Ecran_Titre extends javax.swing.JFrame {
 
     private void Jouer_EcranTitre_boutonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jouer_EcranTitre_boutonActionPerformed
         // TODO add your handling code here:
+        Ecran_Jeu accueil = new Ecran_Jeu();
+        accueil.setLocationRelativeTo(this); 
+        accueil.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_Jouer_EcranTitre_boutonActionPerformed
 
     private void Quitter_EcranTitre_boutonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Quitter_EcranTitre_boutonActionPerformed
         // TODO add your handling code here:
+        this.dispose();
+        System.exit(0);
     }//GEN-LAST:event_Quitter_EcranTitre_boutonActionPerformed
 
     /**

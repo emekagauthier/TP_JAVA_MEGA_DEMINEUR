@@ -79,9 +79,9 @@ public class Ecran_Défaite extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(94, 94, 94)
+                .addGap(78, 78, 78)
                 .addComponent(Défaite_label)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 218, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 234, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Retour_EcranTitre_Défaite_bouton)
                     .addComponent(RelancerPartie_Défaite_bouton)
@@ -94,6 +94,10 @@ public class Ecran_Défaite extends javax.swing.JFrame {
 
     private void Retour_EcranTitre_Défaite_boutonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Retour_EcranTitre_Défaite_boutonActionPerformed
         // TODO add your handling code here:
+        Ecran_Titre accueil = new Ecran_Titre();
+        accueil.setLocationRelativeTo(this); 
+        accueil.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_Retour_EcranTitre_Défaite_boutonActionPerformed
 
     private void RelancerPartie_Défaite_boutonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RelancerPartie_Défaite_boutonActionPerformed
@@ -102,6 +106,8 @@ public class Ecran_Défaite extends javax.swing.JFrame {
 
     private void QuitterDéfaite_boutonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuitterDéfaite_boutonActionPerformed
         // TODO add your handling code here:
+        this.dispose();
+        System.exit(0);
     }//GEN-LAST:event_QuitterDéfaite_boutonActionPerformed
 
     /**

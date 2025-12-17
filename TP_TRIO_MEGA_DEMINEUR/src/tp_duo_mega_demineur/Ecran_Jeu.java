@@ -8,14 +8,14 @@ package tp_duo_mega_demineur;
  *
  * @author Alexander
  */
-public class Ecran_Victoire extends javax.swing.JFrame {
+public class Ecran_Jeu extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Ecran_Victoire.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Ecran_Jeu.class.getName());
 
     /**
-     * Creates new form Ecran_Victoire
+     * Creates new form Ecran_Jeu
      */
-    public Ecran_Victoire() {
+    public Ecran_Jeu() {
         initComponents();
     }
 
@@ -28,87 +28,87 @@ public class Ecran_Victoire extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Victoire_label = new javax.swing.JLabel();
-        Retour_EcranTitre_Victoire_bouton = new javax.swing.JButton();
-        RelancerPartie_Victoire_bouton = new javax.swing.JButton();
-        QuitterVictoire_bouton = new javax.swing.JButton();
+        Retour_EcranTitre_Jeu_bouton = new javax.swing.JButton();
+        Relancer_Jeu_bouton = new javax.swing.JButton();
+        Quitter_Jeu_bouton = new javax.swing.JButton();
+        Titre_Jeu_label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Victoire_label.setFont(new java.awt.Font("Papyrus", 1, 48)); // NOI18N
-        Victoire_label.setText("Victoire !");
-
-        Retour_EcranTitre_Victoire_bouton.setText("Ecran Titre");
-        Retour_EcranTitre_Victoire_bouton.addActionListener(new java.awt.event.ActionListener() {
+        Retour_EcranTitre_Jeu_bouton.setText("Ecran Titre");
+        Retour_EcranTitre_Jeu_bouton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Retour_EcranTitre_Victoire_boutonActionPerformed(evt);
+                Retour_EcranTitre_Jeu_boutonActionPerformed(evt);
             }
         });
 
-        RelancerPartie_Victoire_bouton.setText("Relancer une partie");
-        RelancerPartie_Victoire_bouton.addActionListener(new java.awt.event.ActionListener() {
+        Relancer_Jeu_bouton.setText("Relancer");
+        Relancer_Jeu_bouton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RelancerPartie_Victoire_boutonActionPerformed(evt);
+                Relancer_Jeu_boutonActionPerformed(evt);
             }
         });
 
-        QuitterVictoire_bouton.setText("Quitter");
-        QuitterVictoire_bouton.addActionListener(new java.awt.event.ActionListener() {
+        Quitter_Jeu_bouton.setText("Quitter");
+        Quitter_Jeu_bouton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                QuitterVictoire_boutonActionPerformed(evt);
+                Quitter_Jeu_boutonActionPerformed(evt);
             }
         });
+
+        Titre_Jeu_label.setFont(new java.awt.Font("Snap ITC", 1, 48)); // NOI18N
+        Titre_Jeu_label.setText("JEU");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(233, 233, 233)
-                .addComponent(Victoire_label)
+                .addGap(269, 269, 269)
+                .addComponent(Titre_Jeu_label)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(98, 98, 98)
-                .addComponent(Retour_EcranTitre_Victoire_bouton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
-                .addComponent(RelancerPartie_Victoire_bouton)
-                .addGap(102, 102, 102)
-                .addComponent(QuitterVictoire_bouton)
-                .addGap(76, 76, 76))
+                .addGap(52, 52, 52)
+                .addComponent(Retour_EcranTitre_Jeu_bouton)
+                .addGap(157, 157, 157)
+                .addComponent(Relancer_Jeu_bouton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 179, Short.MAX_VALUE)
+                .addComponent(Quitter_Jeu_bouton)
+                .addGap(48, 48, 48))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(Victoire_label)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 235, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(65, 65, 65)
+                .addComponent(Titre_Jeu_label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 275, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Retour_EcranTitre_Victoire_bouton)
-                    .addComponent(RelancerPartie_Victoire_bouton)
-                    .addComponent(QuitterVictoire_bouton))
-                .addGap(100, 100, 100))
+                    .addComponent(Relancer_Jeu_bouton)
+                    .addComponent(Retour_EcranTitre_Jeu_bouton)
+                    .addComponent(Quitter_Jeu_bouton))
+                .addGap(81, 81, 81))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Retour_EcranTitre_Victoire_boutonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Retour_EcranTitre_Victoire_boutonActionPerformed
+    private void Retour_EcranTitre_Jeu_boutonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Retour_EcranTitre_Jeu_boutonActionPerformed
         // TODO add your handling code here:
         Ecran_Titre accueil = new Ecran_Titre();
         accueil.setLocationRelativeTo(this); 
         accueil.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_Retour_EcranTitre_Victoire_boutonActionPerformed
+    }//GEN-LAST:event_Retour_EcranTitre_Jeu_boutonActionPerformed
 
-    private void RelancerPartie_Victoire_boutonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RelancerPartie_Victoire_boutonActionPerformed
+    private void Relancer_Jeu_boutonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Relancer_Jeu_boutonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_RelancerPartie_Victoire_boutonActionPerformed
+    }//GEN-LAST:event_Relancer_Jeu_boutonActionPerformed
 
-    private void QuitterVictoire_boutonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuitterVictoire_boutonActionPerformed
+    private void Quitter_Jeu_boutonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Quitter_Jeu_boutonActionPerformed
         // TODO add your handling code here:
         this.dispose();
         System.exit(0);
-    }//GEN-LAST:event_QuitterVictoire_boutonActionPerformed
+    }//GEN-LAST:event_Quitter_Jeu_boutonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -132,13 +132,13 @@ public class Ecran_Victoire extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new Ecran_Victoire().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new Ecran_Jeu().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton QuitterVictoire_bouton;
-    private javax.swing.JButton RelancerPartie_Victoire_bouton;
-    private javax.swing.JButton Retour_EcranTitre_Victoire_bouton;
-    private javax.swing.JLabel Victoire_label;
+    private javax.swing.JButton Quitter_Jeu_bouton;
+    private javax.swing.JButton Relancer_Jeu_bouton;
+    private javax.swing.JButton Retour_EcranTitre_Jeu_bouton;
+    private javax.swing.JLabel Titre_Jeu_label;
     // End of variables declaration//GEN-END:variables
 }
