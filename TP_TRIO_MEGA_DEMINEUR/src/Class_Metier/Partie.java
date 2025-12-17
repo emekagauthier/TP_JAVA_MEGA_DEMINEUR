@@ -26,10 +26,7 @@ public String verifierVictoire(){
     if(partie.toutesCellulesRevelees()==true){
         return "Victoire";
     }
-    else{
-        return "";
-    }
-     
+return "";    
 }
 
 public void StartPartie(){
