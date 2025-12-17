@@ -85,7 +85,7 @@ public class Ecran_Défaite extends javax.swing.JFrame {
 
         Défaite_label.setFont(new java.awt.Font("Comic Sans MS", 1, 48)); // NOI18N
         Défaite_label.setText("Défaite...");
-        getContentPane().add(Défaite_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, -1, -1));
+        getContentPane().add(Défaite_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, -1, -1));
 
         Retour_EcranTitre_Défaite_bouton.setText("Ecran Titre");
         Retour_EcranTitre_Défaite_bouton.addActionListener(new java.awt.event.ActionListener() {
@@ -127,6 +127,10 @@ public class Ecran_Défaite extends javax.swing.JFrame {
 
     private void RelancerPartie_Défaite_boutonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RelancerPartie_Défaite_boutonActionPerformed
         // TODO add your handling code here:
+        Ecran_Jeu accueil = new Ecran_Jeu();
+        accueil.setLocationRelativeTo(this); 
+        accueil.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_RelancerPartie_Défaite_boutonActionPerformed
 
     private void QuitterDéfaite_boutonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuitterDéfaite_boutonActionPerformed

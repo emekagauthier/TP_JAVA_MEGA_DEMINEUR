@@ -78,9 +78,9 @@ public class Ecran_Titre extends javax.swing.JFrame {
         Nb_lignes_label = new javax.swing.JLabel();
         Nb_colones_label = new javax.swing.JLabel();
         Nb_bombes_label = new javax.swing.JLabel();
-        Nb_lignes_texte = new javax.swing.JTextField();
-        Nb_colones_texte = new javax.swing.JTextField();
-        Nb_bombes_texte = new javax.swing.JTextField();
+        Nb_lignes_spinner = new javax.swing.JSpinner();
+        Nb_colones_spinner = new javax.swing.JSpinner();
+        Nb_bombes_spinner = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 600));
@@ -121,30 +121,9 @@ public class Ecran_Titre extends javax.swing.JFrame {
 
         Nb_bombes_label.setText("Nombre de bombes :");
         getContentPane().add(Nb_bombes_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 350, -1, -1));
-
-        Nb_lignes_texte.setText("Nb de bombes uniquement");
-        Nb_lignes_texte.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Nb_lignes_texteActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Nb_lignes_texte, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, -1, -1));
-
-        Nb_colones_texte.setText("Nb de colones uniquement");
-        Nb_colones_texte.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Nb_colones_texteActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Nb_colones_texte, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 310, -1, -1));
-
-        Nb_bombes_texte.setText("Nb de bombes uniquement");
-        Nb_bombes_texte.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Nb_bombes_texteActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Nb_bombes_texte, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 350, -1, -1));
+        getContentPane().add(Nb_lignes_spinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 270, 80, -1));
+        getContentPane().add(Nb_colones_spinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, 80, -1));
+        getContentPane().add(Nb_bombes_spinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 350, 80, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -162,18 +141,6 @@ public class Ecran_Titre extends javax.swing.JFrame {
         this.dispose();
         System.exit(0);
     }//GEN-LAST:event_Quitter_EcranTitre_boutonActionPerformed
-
-    private void Nb_lignes_texteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nb_lignes_texteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Nb_lignes_texteActionPerformed
-
-    private void Nb_colones_texteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nb_colones_texteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Nb_colones_texteActionPerformed
-
-    private void Nb_bombes_texteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nb_bombes_texteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Nb_bombes_texteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,11 +171,11 @@ public class Ecran_Titre extends javax.swing.JFrame {
     private javax.swing.JLabel Image_EcranTitre_label;
     private javax.swing.JButton Jouer_EcranTitre_bouton;
     private javax.swing.JLabel Nb_bombes_label;
-    private javax.swing.JTextField Nb_bombes_texte;
+    private javax.swing.JSpinner Nb_bombes_spinner;
     private javax.swing.JLabel Nb_colones_label;
-    private javax.swing.JTextField Nb_colones_texte;
+    private javax.swing.JSpinner Nb_colones_spinner;
     private javax.swing.JLabel Nb_lignes_label;
-    private javax.swing.JTextField Nb_lignes_texte;
+    private javax.swing.JSpinner Nb_lignes_spinner;
     private javax.swing.JButton Quitter_EcranTitre_bouton;
     private javax.swing.JLabel Titre_label;
     // End of variables declaration//GEN-END:variables
