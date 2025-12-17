@@ -29,6 +29,9 @@ public void placerBombe(){
 public void revelerCellule(){
     devoilee=true;
 }
+public void setNbBombesAdjacentes(int nb_Bombe){
+    nbBombesAdjacentes = nb_Bombe ;
+}
 
     @Override
     public String toString() {
@@ -38,7 +41,13 @@ public void revelerCellule(){
         if (Presence_Bombe==true && devoilee==true ){
             return "B";
         }
-        return "";
+        if (nbBombesAdjacentes>0 && devoilee==true && Presence_Bombe==false){
+            return Integer.toString(nbBombesAdjacentes) ;
+        }
+        if(devoilee==true && Presence_Bombe==false && nbBombesAdjacentes==0){
+           return ""; 
+        }
+        return"probleme";
     }
 
 }
