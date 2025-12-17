@@ -86,7 +86,7 @@ public class GrilleDeJeu {
                 if (grille[i][j].getdevoilee() == true & getPresenceBombe(i, j) == false) {
                     nb += 1;
                 }
-
+                
             }
         }
         if (nb == val) {
