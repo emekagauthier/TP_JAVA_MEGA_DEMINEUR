@@ -34,9 +34,14 @@ public class Ecran_Victoire extends javax.swing.JFrame {
         QuitterVictoire_bouton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(800, 600));
+        setPreferredSize(new java.awt.Dimension(800, 600));
+        setSize(new java.awt.Dimension(800, 600));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Victoire_label.setFont(new java.awt.Font("Papyrus", 1, 48)); // NOI18N
         Victoire_label.setText("Victoire !");
+        getContentPane().add(Victoire_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, -1, -1));
 
         Retour_EcranTitre_Victoire_bouton.setText("Ecran Titre");
         Retour_EcranTitre_Victoire_bouton.addActionListener(new java.awt.event.ActionListener() {
@@ -44,6 +49,7 @@ public class Ecran_Victoire extends javax.swing.JFrame {
                 Retour_EcranTitre_Victoire_boutonActionPerformed(evt);
             }
         });
+        getContentPane().add(Retour_EcranTitre_Victoire_bouton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 460, -1, -1));
 
         RelancerPartie_Victoire_bouton.setText("Relancer une partie");
         RelancerPartie_Victoire_bouton.addActionListener(new java.awt.event.ActionListener() {
@@ -51,6 +57,7 @@ public class Ecran_Victoire extends javax.swing.JFrame {
                 RelancerPartie_Victoire_boutonActionPerformed(evt);
             }
         });
+        getContentPane().add(RelancerPartie_Victoire_bouton, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 460, -1, -1));
 
         QuitterVictoire_bouton.setText("Quitter");
         QuitterVictoire_bouton.addActionListener(new java.awt.event.ActionListener() {
@@ -58,36 +65,7 @@ public class Ecran_Victoire extends javax.swing.JFrame {
                 QuitterVictoire_boutonActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(233, 233, 233)
-                .addComponent(Victoire_label)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(98, 98, 98)
-                .addComponent(Retour_EcranTitre_Victoire_bouton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
-                .addComponent(RelancerPartie_Victoire_bouton)
-                .addGap(102, 102, 102)
-                .addComponent(QuitterVictoire_bouton)
-                .addGap(76, 76, 76))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(Victoire_label)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 235, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Retour_EcranTitre_Victoire_bouton)
-                    .addComponent(RelancerPartie_Victoire_bouton)
-                    .addComponent(QuitterVictoire_bouton))
-                .addGap(100, 100, 100))
-        );
+        getContentPane().add(QuitterVictoire_bouton, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 460, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -34,9 +34,14 @@ public class Ecran_Défaite extends javax.swing.JFrame {
         QuitterDéfaite_bouton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(800, 600));
+        setPreferredSize(new java.awt.Dimension(800, 600));
+        setSize(new java.awt.Dimension(800, 600));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Défaite_label.setFont(new java.awt.Font("Comic Sans MS", 1, 48)); // NOI18N
         Défaite_label.setText("Défaite...");
+        getContentPane().add(Défaite_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, -1, -1));
 
         Retour_EcranTitre_Défaite_bouton.setText("Ecran Titre");
         Retour_EcranTitre_Défaite_bouton.addActionListener(new java.awt.event.ActionListener() {
@@ -44,6 +49,7 @@ public class Ecran_Défaite extends javax.swing.JFrame {
                 Retour_EcranTitre_Défaite_boutonActionPerformed(evt);
             }
         });
+        getContentPane().add(Retour_EcranTitre_Défaite_bouton, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 490, -1, -1));
 
         RelancerPartie_Défaite_bouton.setText("Relancer une partie");
         RelancerPartie_Défaite_bouton.addActionListener(new java.awt.event.ActionListener() {
@@ -51,6 +57,7 @@ public class Ecran_Défaite extends javax.swing.JFrame {
                 RelancerPartie_Défaite_boutonActionPerformed(evt);
             }
         });
+        getContentPane().add(RelancerPartie_Défaite_bouton, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 490, -1, -1));
 
         QuitterDéfaite_bouton.setText("Quitter");
         QuitterDéfaite_bouton.addActionListener(new java.awt.event.ActionListener() {
@@ -58,36 +65,7 @@ public class Ecran_Défaite extends javax.swing.JFrame {
                 QuitterDéfaite_boutonActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Défaite_label)
-                .addGap(214, 214, 214))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(93, 93, 93)
-                .addComponent(Retour_EcranTitre_Défaite_bouton)
-                .addGap(94, 94, 94)
-                .addComponent(RelancerPartie_Défaite_bouton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
-                .addComponent(QuitterDéfaite_bouton)
-                .addGap(84, 84, 84))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(78, 78, 78)
-                .addComponent(Défaite_label)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 234, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Retour_EcranTitre_Défaite_bouton)
-                    .addComponent(RelancerPartie_Défaite_bouton)
-                    .addComponent(QuitterDéfaite_bouton))
-                .addGap(102, 102, 102))
-        );
+        getContentPane().add(QuitterDéfaite_bouton, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 490, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -3,13 +3,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package tp_duo_mega_demineur;
+import java.awt.GridLayout;
+import javax.swing.JButton;
 
 /**
  *
  * @author Alexander
  */
 public class Ecran_Jeu extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Ecran_Jeu.class.getName());
 
     /**
@@ -17,6 +19,15 @@ public class Ecran_Jeu extends javax.swing.JFrame {
      */
     public Ecran_Jeu() {
         initComponents();
+        int nbLignes = 10;
+        int nbColonnes = 10;
+        FenêtrePrincipal_Jeu.setLayout(new GridLayout(nbLignes, nbColonnes));
+        for (int i = 0; i < nbLignes; i++) {
+            for (int j = 0; j < nbColonnes; j++) {
+                JButton bouton_cellule = new JButton(); // création d'un bouton 
+                FenêtrePrincipal_Jeu.add(bouton_cellule); // ajout au Jpanel PanneauGrille 
+            }
+        }
     }
 
     /**
@@ -32,8 +43,13 @@ public class Ecran_Jeu extends javax.swing.JFrame {
         Relancer_Jeu_bouton = new javax.swing.JButton();
         Quitter_Jeu_bouton = new javax.swing.JButton();
         Titre_Jeu_label = new javax.swing.JLabel();
+        FenêtrePrincipal_Jeu = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(800, 600));
+        setPreferredSize(new java.awt.Dimension(800, 600));
+        setSize(new java.awt.Dimension(800, 600));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Retour_EcranTitre_Jeu_bouton.setText("Ecran Titre");
         Retour_EcranTitre_Jeu_bouton.addActionListener(new java.awt.event.ActionListener() {
@@ -41,6 +57,7 @@ public class Ecran_Jeu extends javax.swing.JFrame {
                 Retour_EcranTitre_Jeu_boutonActionPerformed(evt);
             }
         });
+        getContentPane().add(Retour_EcranTitre_Jeu_bouton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 520, -1, -1));
 
         Relancer_Jeu_bouton.setText("Relancer");
         Relancer_Jeu_bouton.addActionListener(new java.awt.event.ActionListener() {
@@ -48,6 +65,7 @@ public class Ecran_Jeu extends javax.swing.JFrame {
                 Relancer_Jeu_boutonActionPerformed(evt);
             }
         });
+        getContentPane().add(Relancer_Jeu_bouton, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 520, -1, -1));
 
         Quitter_Jeu_bouton.setText("Quitter");
         Quitter_Jeu_bouton.addActionListener(new java.awt.event.ActionListener() {
@@ -55,39 +73,27 @@ public class Ecran_Jeu extends javax.swing.JFrame {
                 Quitter_Jeu_boutonActionPerformed(evt);
             }
         });
+        getContentPane().add(Quitter_Jeu_bouton, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 520, -1, -1));
 
         Titre_Jeu_label.setFont(new java.awt.Font("Snap ITC", 1, 48)); // NOI18N
         Titre_Jeu_label.setText("JEU");
+        getContentPane().add(Titre_Jeu_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(269, 269, 269)
-                .addComponent(Titre_Jeu_label)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addComponent(Retour_EcranTitre_Jeu_bouton)
-                .addGap(157, 157, 157)
-                .addComponent(Relancer_Jeu_bouton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 179, Short.MAX_VALUE)
-                .addComponent(Quitter_Jeu_bouton)
-                .addGap(48, 48, 48))
+        FenêtrePrincipal_Jeu.setBackground(new java.awt.Color(255, 0, 0));
+        FenêtrePrincipal_Jeu.setPreferredSize(new java.awt.Dimension(400, 400));
+
+        javax.swing.GroupLayout FenêtrePrincipal_JeuLayout = new javax.swing.GroupLayout(FenêtrePrincipal_Jeu);
+        FenêtrePrincipal_Jeu.setLayout(FenêtrePrincipal_JeuLayout);
+        FenêtrePrincipal_JeuLayout.setHorizontalGroup(
+            FenêtrePrincipal_JeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addComponent(Titre_Jeu_label)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 275, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Relancer_Jeu_bouton)
-                    .addComponent(Retour_EcranTitre_Jeu_bouton)
-                    .addComponent(Quitter_Jeu_bouton))
-                .addGap(81, 81, 81))
+        FenêtrePrincipal_JeuLayout.setVerticalGroup(
+            FenêtrePrincipal_JeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
+
+        getContentPane().add(FenêtrePrincipal_Jeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -95,7 +101,7 @@ public class Ecran_Jeu extends javax.swing.JFrame {
     private void Retour_EcranTitre_Jeu_boutonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Retour_EcranTitre_Jeu_boutonActionPerformed
         // TODO add your handling code here:
         Ecran_Titre accueil = new Ecran_Titre();
-        accueil.setLocationRelativeTo(this); 
+        accueil.setLocationRelativeTo(this);
         accueil.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Retour_EcranTitre_Jeu_boutonActionPerformed
@@ -136,6 +142,7 @@ public class Ecran_Jeu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel FenêtrePrincipal_Jeu;
     private javax.swing.JButton Quitter_Jeu_bouton;
     private javax.swing.JButton Relancer_Jeu_bouton;
     private javax.swing.JButton Retour_EcranTitre_Jeu_bouton;

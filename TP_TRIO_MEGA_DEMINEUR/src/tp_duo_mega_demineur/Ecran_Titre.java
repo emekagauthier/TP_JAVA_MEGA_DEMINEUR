@@ -33,9 +33,14 @@ public class Ecran_Titre extends javax.swing.JFrame {
         Quitter_EcranTitre_bouton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(800, 600));
+        setPreferredSize(new java.awt.Dimension(800, 600));
+        setSize(new java.awt.Dimension(800, 600));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Titre_label.setFont(new java.awt.Font("Stencil", 1, 48)); // NOI18N
         Titre_label.setText("Mega Démineur");
+        getContentPane().add(Titre_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, -1, 75));
 
         Jouer_EcranTitre_bouton.setText("Jouer");
         Jouer_EcranTitre_bouton.addActionListener(new java.awt.event.ActionListener() {
@@ -43,6 +48,7 @@ public class Ecran_Titre extends javax.swing.JFrame {
                 Jouer_EcranTitre_boutonActionPerformed(evt);
             }
         });
+        getContentPane().add(Jouer_EcranTitre_bouton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 470, -1, -1));
 
         Quitter_EcranTitre_bouton.setText("Quitter");
         Quitter_EcranTitre_bouton.addActionListener(new java.awt.event.ActionListener() {
@@ -50,32 +56,7 @@ public class Ecran_Titre extends javax.swing.JFrame {
                 Quitter_EcranTitre_boutonActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(142, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(Jouer_EcranTitre_bouton)
-                        .addGap(254, 254, 254)
-                        .addComponent(Quitter_EcranTitre_bouton))
-                    .addComponent(Titre_label))
-                .addGap(128, 128, 128))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addComponent(Titre_label, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 229, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Jouer_EcranTitre_bouton)
-                    .addComponent(Quitter_EcranTitre_bouton))
-                .addGap(126, 126, 126))
-        );
+        getContentPane().add(Quitter_EcranTitre_bouton, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 480, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
