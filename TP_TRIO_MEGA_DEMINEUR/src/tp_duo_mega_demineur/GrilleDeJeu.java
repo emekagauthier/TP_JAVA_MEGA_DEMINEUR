@@ -10,9 +10,9 @@ package tp_duo_mega_demineur;
  */
 public class GrilleDeJeu {
 
-    private Cellule[][] grille = new Cellule[10][10];
     private int nbLignes;
     private int nbColonnes;
+    private Cellule[][] grille = new Cellule[nbLignes][nbColonnes];
     private int nbBombes;
 
     public int getNbLignes() {
@@ -70,20 +70,42 @@ public class GrilleDeJeu {
             }
         }
     }
-    public boolean getPresenceBombe(int i, int j){
+
+    public boolean getPresenceBombe(int i, int j) {
         return grille[i][j].getPresenceBombe();
     }
+
+    public boolean toutesCellulesRevelees() {
+        int val = (nbLignes * nbColonnes) - nbBombes;
+        int nb = 0;
+        for (int i = 0; i < nbLignes; i++) {
+            for (int j = 0; j < nbColonnes; j++) {
+                if (grille[i][j].getdevoilee() == true & getPresenceBombe(i, j) == true) {
+                    return false;
+                }
+                if (grille[i][j].getdevoilee() == true & getPresenceBombe(i, j) == false) {
+                    nb += 1;
+                }
+
+            }
+        }
+        if (nb == val) {
+            return true;
+        }
+        return false;
+    }
+
     //Methode Reveler Cellule
     public void revelerCellule(int ligne, int colonne) {
         if (grille[ligne][colonne].getdevoilee() == true) {
             //case deja devoilé
         } else {
             grille[ligne][colonne].revelerCellule();
-            if (getPresenceBombe(ligne,colonne) == true) {
+            if (getPresenceBombe(ligne, colonne) == true) {
                 //j'ai perdu mais quoi envoyer comme signal 
 
             }
-            if (getPresenceBombe(ligne,colonne) == false && grille[ligne][colonne].getNbBombesAdjacentes() == 0) {
+            if (getPresenceBombe(ligne, colonne) == false && grille[ligne][colonne].getNbBombesAdjacentes() == 0) {
 
                 //Case a Gauche
                 if ((colonne - 1) >= 0) {
