@@ -70,18 +70,20 @@ public class GrilleDeJeu {
             }
         }
     }
-
+    public boolean getPresenceBombe(int i, int j){
+        return grille[i][j].getPresenceBombe();
+    }
     //Methode Reveler Cellule
     public void revelerCellule(int ligne, int colonne) {
         if (grille[ligne][colonne].getdevoilee() == true) {
             //case deja devoilé
         } else {
             grille[ligne][colonne].revelerCellule();
-            if (grille[ligne][colonne].getPresenceBombe() == true) {
+            if (getPresenceBombe(ligne,colonne) == true) {
                 //j'ai perdu mais quoi envoyer comme signal 
 
             }
-            if (grille[ligne][colonne].getPresenceBombe() == false && grille[ligne][colonne].getNbBombesAdjacentes() == 0) {
+            if (getPresenceBombe(ligne,colonne) == false && grille[ligne][colonne].getNbBombesAdjacentes() == 0) {
 
                 //Case a Gauche
                 if ((colonne - 1) >= 0) {
@@ -118,6 +120,6 @@ public class GrilleDeJeu {
 
             }
 
-        } // else
+        }
     }
 }
