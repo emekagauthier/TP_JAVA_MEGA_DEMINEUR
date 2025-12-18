@@ -14,7 +14,7 @@ public class GrilleDeJeu {
 
     private int nbLignes;
     private int nbColonnes;
-    Cellule[][] grille = new Cellule[nbLignes][nbColonnes];
+    private Cellule[][] grille;
     private int nbBombes;
 
     public GrilleDeJeu(int nbLignes, int nbColonnes, int nbBombes) {
@@ -22,6 +22,11 @@ public class GrilleDeJeu {
         this.nbColonnes = nbColonnes;
         this.nbBombes = nbBombes;
         this.grille = new Cellule[nbLignes][nbColonnes];
+        for (int i = 0; i < nbLignes; i++) {
+            for (int j = 0; j < nbColonnes; j++) {
+                grille[i][j] = new Cellule();
+            }
+        }
     }
 
     public int getNbLignes() {
@@ -35,13 +40,13 @@ public class GrilleDeJeu {
     public int getNbBombes() {
         return nbBombes;
     }
-    
-    public Cellule [][]  getgrille(){
-        return grille ;
+
+    public Cellule[][] getgrille() {
+        return grille;
     }
-    
+
     public void placerBombesAleatoirement() {
-        int compteur = 1;
+        int compteur = 0;
         while (compteur != nbBombes) {
             int i = (int) (Math.random() * nbColonnes);
             int j = (int) (Math.random() * nbLignes);
@@ -50,6 +55,7 @@ public class GrilleDeJeu {
                 j = (int) (Math.random() * nbLignes);
             }
             grille[i][j].placerBombe();
+            compteur++;
         }
     }
 
@@ -160,18 +166,15 @@ public class GrilleDeJeu {
 
     @Override
     public String toString() {
-        String r = super.toString();
-        String chaine = "|";
+        StringBuilder chaine = new StringBuilder();
         for (int i = 0; i < nbLignes; i++) {
+            chaine.append("|");
             for (int j = 0; j < nbColonnes; j++) {
-                if (j != nbColonnes) {
-                    chaine += r;
-                } else {
-                    chaine += "|\n";
-                }
+                 chaine.append(grille[i][j].toString()).append("|");
             }
+            chaine.append("\n");
         }
-        return chaine;
+        return chaine.toString();
     }
 
 }

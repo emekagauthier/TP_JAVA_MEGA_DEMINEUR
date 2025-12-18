@@ -49,7 +49,7 @@ public void setNbBombesAdjacentes(int nb_Bombe){
             return Integer.toString(nbBombesAdjacentes) ;
         }
         if(devoilee==true && Presence_Bombe==false && nbBombesAdjacentes==0){
-           return ""; 
+           return " "; 
         }
         return"probleme";
     }

@@ -17,7 +17,11 @@ public class TP_DUO_MEGA_DEMINEUR {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        GrilleDeJeu game = new GrilleDeJeu(10,10,5);
+        GrilleDeJeu game = new GrilleDeJeu(10,10,10);
+        game.placerBombesAleatoirement();
+        game.calculerBombesAdjacentes();
+        game.revelerCellule(0, 0);
+        System.out.println(game);
         
     }
    
