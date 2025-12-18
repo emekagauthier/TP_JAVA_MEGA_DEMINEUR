@@ -12,6 +12,10 @@ public class Partie {
 //Attributs
 GrilleDeJeu partie ;
 
+    public Partie(GrilleDeJeu partie) {
+        this.partie = partie;
+    }
+
 public void initialiserPartie(){
     partie.placerBombesAleatoirement();
     partie.calculerBombesAdjacentes();

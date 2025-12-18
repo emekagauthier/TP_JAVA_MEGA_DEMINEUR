@@ -14,8 +14,15 @@ public class GrilleDeJeu {
 
     private int nbLignes;
     private int nbColonnes;
-    private Cellule[][] grille = new Cellule[nbLignes][nbColonnes];
+    Cellule[][] grille = new Cellule[nbLignes][nbColonnes];
     private int nbBombes;
+
+    public GrilleDeJeu(int nbLignes, int nbColonnes, int nbBombes) {
+        this.nbLignes = nbLignes;
+        this.nbColonnes = nbColonnes;
+        this.nbBombes = nbBombes;
+        this.grille = new Cellule[nbLignes][nbColonnes];
+    }
 
     public int getNbLignes() {
         return nbLignes;
@@ -151,7 +158,7 @@ public class GrilleDeJeu {
     public String toString() {
         String r = super.toString();
         String chaine = "|";
-        for (int i = 0; i <nbLignes ; i++) {
+        for (int i = 0; i < nbLignes; i++) {
             for (int j = 0; j < nbColonnes; j++) {
                 if (j != nbColonnes) {
                     chaine += r;
