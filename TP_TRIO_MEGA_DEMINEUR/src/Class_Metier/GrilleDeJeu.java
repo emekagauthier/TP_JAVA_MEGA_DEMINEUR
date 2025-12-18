@@ -125,7 +125,7 @@ public class GrilleDeJeu {
 
             }
             if (getPresenceBombe(ligne, colonne) == false && grille[ligne][colonne].getNbBombesAdjacentes() == 0) {
-
+                
                 //Case a Gauche
                 if ((colonne - 1) >= 0) {
                     revelerCellule(ligne, colonne - 1);
