@@ -4,6 +4,7 @@
  */
 package tp_duo_mega_demineur;
 
+import Class_Metier.Cellule;
 import Class_Metier.GrilleDeJeu;
 
 /**
@@ -17,7 +18,7 @@ public class TP_DUO_MEGA_DEMINEUR {
      */
     public static void main(String[] args) {
         GrilleDeJeu game = new GrilleDeJeu(10,10,5);
-        System.out.println(game.getNbColonnes());
+        
     }
    
 }

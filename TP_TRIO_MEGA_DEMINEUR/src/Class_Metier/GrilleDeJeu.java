@@ -35,7 +35,11 @@ public class GrilleDeJeu {
     public int getNbBombes() {
         return nbBombes;
     }
-
+    
+    public Cellule [][]  getgrille(){
+        return grille ;
+    }
+    
     public void placerBombesAleatoirement() {
         int compteur = 1;
         while (compteur != nbBombes) {
