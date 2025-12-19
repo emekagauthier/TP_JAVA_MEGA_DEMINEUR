@@ -3,10 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package tp_duo_mega_demineur;
+
 import Class_Metier.Cellule;
 import Class_Metier.GrilleDeJeu;
 import Class_Metier.JBouton_better;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 /**
@@ -14,6 +17,7 @@ import javax.swing.JButton;
  * @author Alexander
  */
 public class Ecran_Jeu extends javax.swing.JFrame {
+
     GrilleDeJeu game = new GrilleDeJeu(10, 10, 5);
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Ecran_Jeu.class.getName());
 
@@ -22,18 +26,30 @@ public class Ecran_Jeu extends javax.swing.JFrame {
      */
     public Ecran_Jeu() {
         initComponents();
-        
+
         game.placerBombesAleatoirement();
         game.calculerBombesAdjacentes();
-        
+
         int nbLignes = game.getNbLignes();
         int nbColonnes = game.getNbColonnes();
-        
+
         FenêtrePrincipal_Jeu.setLayout(new GridLayout(nbLignes, nbColonnes));
         for (int i = 0; i < nbLignes; i++) {
             for (int j = 0; j < nbColonnes; j++) {
                 Cellule c = game.getgrille()[i][j];
-                JBouton_better bouton_cellule = new JBouton_better(i,j,c);
+                JBouton_better bouton_cellule = new JBouton_better(i, j, c);
+                final int x = i;
+                final int y = j;
+                ActionListener ecouteurClick = new ActionListener() {
+
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+
+                        game.revelerCellule(x, y);
+                        repaint();
+                    }
+                };
+                bouton_cellule.addActionListener(ecouteurClick);
                 FenêtrePrincipal_Jeu.add(bouton_cellule); // ajout au Jpanel PanneauGrille 
             }
         }
