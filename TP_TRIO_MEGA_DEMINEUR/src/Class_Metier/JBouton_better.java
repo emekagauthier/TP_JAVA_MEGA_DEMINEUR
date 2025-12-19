@@ -4,6 +4,7 @@
  */
 package Class_Metier;
 
+import java.awt.Graphics;
 import javax.swing.JButton;
 
 /**
@@ -22,6 +23,14 @@ private Cellule C_reference;
         this.coordonne_x = coordonne_x;
         this.coordonne_y = coordonne_y;
         this.C_reference = C_reference;
+    }
+    
+    @Override
+    protected void paintComponent(Graphics g){
+        if (C_reference.getdevoilee()==true){
+            g.drawString("CC",coordonne_x,coordonne_y);
+        }
+        
     }
 
     

@@ -44,6 +44,12 @@ public class GrilleDeJeu {
     public Cellule[][] getgrille() {
         return grille;
     }
+    
+    public String getValueCellule(int x , int y ){
+        
+        return grille[x][y] +"";
+        
+    }
 
     public void placerBombesAleatoirement() {
         int compteur = 0;

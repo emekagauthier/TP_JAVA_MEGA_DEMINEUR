@@ -46,7 +46,8 @@ public class Ecran_Jeu extends javax.swing.JFrame {
                     public void actionPerformed(ActionEvent e) {
 
                         game.revelerCellule(x, y);
-                        repaint();
+                        System.out.println(game);
+                        FenêtrePrincipal_Jeu.repaint();
                     }
                 };
                 bouton_cellule.addActionListener(ecouteurClick);
