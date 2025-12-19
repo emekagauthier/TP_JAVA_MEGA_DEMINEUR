@@ -19,6 +19,7 @@ public class Ecran_Défaite extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setImageToLabelKeepRatio(Image_Perdu_label, "/Images/Perdu.jpg");
+        setImageToLabelKeepRatio(You_died_label, "/Images/You_Died.png");
     }
     private void setImageToLabelKeepRatio(javax.swing.JLabel label, String resourcePath) {
         java.net.URL url = getClass().getResource(resourcePath);
@@ -61,7 +62,6 @@ public class Ecran_Défaite extends javax.swing.JFrame {
         label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label.setVerticalAlignment(javax.swing.SwingConstants.CENTER);
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -76,6 +76,7 @@ public class Ecran_Défaite extends javax.swing.JFrame {
         RelancerPartie_Défaite_bouton = new javax.swing.JButton();
         QuitterDéfaite_bouton = new javax.swing.JButton();
         Image_Perdu_label = new javax.swing.JLabel();
+        You_died_label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 600));
@@ -85,7 +86,7 @@ public class Ecran_Défaite extends javax.swing.JFrame {
 
         Défaite_label.setFont(new java.awt.Font("Comic Sans MS", 1, 48)); // NOI18N
         Défaite_label.setText("Défaite...");
-        getContentPane().add(Défaite_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, -1, -1));
+        getContentPane().add(Défaite_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, -1, -1));
 
         Retour_EcranTitre_Défaite_bouton.setText("Ecran Titre");
         Retour_EcranTitre_Défaite_bouton.addActionListener(new java.awt.event.ActionListener() {
@@ -112,7 +113,11 @@ public class Ecran_Défaite extends javax.swing.JFrame {
         getContentPane().add(QuitterDéfaite_bouton, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 490, -1, -1));
 
         Image_Perdu_label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Perdu.jpg"))); // NOI18N
-        getContentPane().add(Image_Perdu_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 290, 220));
+        getContentPane().add(Image_Perdu_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 290, 220));
+
+        You_died_label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/You_Died.png"))); // NOI18N
+        You_died_label.setText("You_died_label");
+        getContentPane().add(You_died_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 440, 140));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -170,5 +175,6 @@ public class Ecran_Défaite extends javax.swing.JFrame {
     private javax.swing.JButton QuitterDéfaite_bouton;
     private javax.swing.JButton RelancerPartie_Défaite_bouton;
     private javax.swing.JButton Retour_EcranTitre_Défaite_bouton;
+    private javax.swing.JLabel You_died_label;
     // End of variables declaration//GEN-END:variables
 }

@@ -17,8 +17,49 @@ public class Ecran_Victoire extends javax.swing.JFrame {
      */
     public Ecran_Victoire() {
         initComponents();
+        setImageToLabelKeepRatio(YouDroppedThis_label, "/Images/YouDroppedThis.jpg");
     }
-
+    private void setImageToLabelKeepRatio(javax.swing.JLabel label, String resourcePath) {
+        java.net.URL url = getClass().getResource(resourcePath);
+        if (url == null) {
+            System.err.println("Ressource introuvable : " + resourcePath);
+            return;
+        }
+        javax.swing.ImageIcon originalIcon = new javax.swing.ImageIcon(url);
+        if (label.getWidth() <= 0 || label.getHeight() <= 0) {
+            label.setIcon(originalIcon); // icône provisoire
+            label.addComponentListener(new java.awt.event.ComponentAdapter() {
+                @Override
+                public void componentResized(java.awt.event.ComponentEvent e) {
+                    scaleAndSetIconKeepRatio(label, originalIcon);
+                }
+                @Override
+                public void componentShown(java.awt.event.ComponentEvent e) {
+                    scaleAndSetIconKeepRatio(label, originalIcon);
+                }
+            });
+            return;
+        }
+        scaleAndSetIconKeepRatio(label, originalIcon);
+    }
+    private void scaleAndSetIconKeepRatio(javax.swing.JLabel label, javax.swing.ImageIcon originalIcon) {
+        int labelW = label.getWidth();
+        int labelH = label.getHeight();
+        if (labelW <= 0 || labelH <= 0) {
+            return;
+        }
+        int imgW = originalIcon.getIconWidth();
+        int imgH = originalIcon.getIconHeight();
+        double scale = Math.min((double) labelW / imgW, (double) labelH / imgH);
+        int newW = Math.max(1, (int) (imgW * scale));
+        int newH = Math.max(1, (int) (imgH * scale));
+        java.awt.Image scaled = originalIcon.getImage()
+                .getScaledInstance(newW, newH, java.awt.Image.SCALE_SMOOTH);
+        label.setIcon(new javax.swing.ImageIcon(scaled));
+        label.setText("");
+        label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label.setVerticalAlignment(javax.swing.SwingConstants.CENTER);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -32,6 +73,7 @@ public class Ecran_Victoire extends javax.swing.JFrame {
         Retour_EcranTitre_Victoire_bouton = new javax.swing.JButton();
         RelancerPartie_Victoire_bouton = new javax.swing.JButton();
         QuitterVictoire_bouton = new javax.swing.JButton();
+        YouDroppedThis_label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 600));
@@ -41,7 +83,7 @@ public class Ecran_Victoire extends javax.swing.JFrame {
 
         Victoire_label.setFont(new java.awt.Font("Papyrus", 1, 48)); // NOI18N
         Victoire_label.setText("Victoire !");
-        getContentPane().add(Victoire_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, -1, -1));
+        getContentPane().add(Victoire_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, -1, -1));
 
         Retour_EcranTitre_Victoire_bouton.setText("Ecran Titre");
         Retour_EcranTitre_Victoire_bouton.addActionListener(new java.awt.event.ActionListener() {
@@ -66,6 +108,10 @@ public class Ecran_Victoire extends javax.swing.JFrame {
             }
         });
         getContentPane().add(QuitterVictoire_bouton, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 460, -1, -1));
+
+        YouDroppedThis_label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/YouDropThis.jpg"))); // NOI18N
+        YouDroppedThis_label.setText("YouDropThis_label");
+        getContentPane().add(YouDroppedThis_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, 280, 250));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -122,5 +168,6 @@ public class Ecran_Victoire extends javax.swing.JFrame {
     private javax.swing.JButton RelancerPartie_Victoire_bouton;
     private javax.swing.JButton Retour_EcranTitre_Victoire_bouton;
     private javax.swing.JLabel Victoire_label;
+    private javax.swing.JLabel YouDroppedThis_label;
     // End of variables declaration//GEN-END:variables
 }

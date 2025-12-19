@@ -4,6 +4,8 @@
  */
 package tp_duo_mega_demineur;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Alexander
@@ -19,8 +21,8 @@ public class Ecran_Titre extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setImageToLabelKeepRatio(Image_EcranTitre_label, "/Images/EPF_logo_2021.png");
+        setImageToLabelKeepRatio(Image_logo_label, "/Images/Démineur.png");
     }
-
     private void setImageToLabelKeepRatio(javax.swing.JLabel label, String resourcePath) {
         java.net.URL url = getClass().getResource(resourcePath);
         if (url == null) {
@@ -35,6 +37,7 @@ public class Ecran_Titre extends javax.swing.JFrame {
                 public void componentResized(java.awt.event.ComponentEvent e) {
                     scaleAndSetIconKeepRatio(label, originalIcon);
                 }
+
                 @Override
                 public void componentShown(java.awt.event.ComponentEvent e) {
                     scaleAndSetIconKeepRatio(label, originalIcon);
@@ -74,13 +77,14 @@ public class Ecran_Titre extends javax.swing.JFrame {
         Titre_label = new javax.swing.JLabel();
         Jouer_EcranTitre_bouton = new javax.swing.JButton();
         Quitter_EcranTitre_bouton = new javax.swing.JButton();
-        Image_EcranTitre_label = new javax.swing.JLabel();
         Nb_lignes_label = new javax.swing.JLabel();
         Nb_colones_label = new javax.swing.JLabel();
         Nb_bombes_label = new javax.swing.JLabel();
         Nb_lignes_spinner = new javax.swing.JSpinner();
         Nb_colones_spinner = new javax.swing.JSpinner();
         Nb_bombes_spinner = new javax.swing.JSpinner();
+        Image_EcranTitre_label = new javax.swing.JLabel();
+        Image_logo_label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 600));
@@ -108,28 +112,52 @@ public class Ecran_Titre extends javax.swing.JFrame {
         });
         getContentPane().add(Quitter_EcranTitre_bouton, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 480, -1, -1));
 
+        Nb_lignes_label.setText("Nombre de Lignes :");
+        getContentPane().add(Nb_lignes_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 340, -1, -1));
+
+        Nb_colones_label.setText("Nombre de colones :");
+        getContentPane().add(Nb_colones_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 370, -1, -1));
+
+        Nb_bombes_label.setText("Nombre de bombes :");
+        getContentPane().add(Nb_bombes_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 400, -1, -1));
+        getContentPane().add(Nb_lignes_spinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 340, 80, -1));
+        getContentPane().add(Nb_colones_spinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 370, 80, -1));
+        getContentPane().add(Nb_bombes_spinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 400, 80, -1));
+
         Image_EcranTitre_label.setBackground(new java.awt.Color(255, 255, 255));
         Image_EcranTitre_label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/EPF_logo_2021.png"))); // NOI18N
         Image_EcranTitre_label.setText("Image Logo EPF");
         getContentPane().add(Image_EcranTitre_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 110, 90));
 
-        Nb_lignes_label.setText("Nombre de Lignes :");
-        getContentPane().add(Nb_lignes_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 270, -1, -1));
-
-        Nb_colones_label.setText("Nombre de colones :");
-        getContentPane().add(Nb_colones_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 310, -1, -1));
-
-        Nb_bombes_label.setText("Nombre de bombes :");
-        getContentPane().add(Nb_bombes_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 350, -1, -1));
-        getContentPane().add(Nb_lignes_spinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 270, 80, -1));
-        getContentPane().add(Nb_colones_spinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, 80, -1));
-        getContentPane().add(Nb_bombes_spinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 350, 80, -1));
+        Image_logo_label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Démineur.png"))); // NOI18N
+        Image_logo_label.setText("Logo_Jeu");
+        getContentPane().add(Image_logo_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 300, 150));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
     private void Jouer_EcranTitre_boutonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jouer_EcranTitre_boutonActionPerformed
         // TODO add your handling code here:
+        int nbLignes = (Integer) Nb_lignes_spinner.getValue();
+        int nbColonnes = (Integer) Nb_colones_spinner.getValue();
+        int nbBombes = (Integer) Nb_bombes_spinner.getValue();
+        if (nbLignes <= 0 || nbColonnes <= 0 || nbBombes <= 0) {
+            JOptionPane.showMessageDialog(
+                    this,
+                    "Veuillez choisir au moins 1 pour chaque composante (lignes, colonnes et bombes).",
+                    "Erreur de configuration",
+                    JOptionPane.ERROR_MESSAGE
+            );
+            return;
+        }
+        if (nbBombes > nbLignes*nbColonnes) {
+            JOptionPane.showMessageDialog(
+                    this,
+                    "Il y a trop de bombes pour le nombre de cases disponible.",
+                    "Erreur de configuration",
+                    JOptionPane.ERROR_MESSAGE
+            );
+            return;
+        }
         Ecran_Jeu accueil = new Ecran_Jeu();
         accueil.setLocationRelativeTo(this);
         accueil.setVisible(true);
@@ -169,6 +197,7 @@ public class Ecran_Titre extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Image_EcranTitre_label;
+    private javax.swing.JLabel Image_logo_label;
     private javax.swing.JButton Jouer_EcranTitre_bouton;
     private javax.swing.JLabel Nb_bombes_label;
     private javax.swing.JSpinner Nb_bombes_spinner;
