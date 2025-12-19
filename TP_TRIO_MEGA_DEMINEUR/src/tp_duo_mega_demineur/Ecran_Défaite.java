@@ -73,7 +73,6 @@ public class Ecran_Défaite extends javax.swing.JFrame {
 
         Défaite_label = new javax.swing.JLabel();
         Retour_EcranTitre_Défaite_bouton = new javax.swing.JButton();
-        RelancerPartie_Défaite_bouton = new javax.swing.JButton();
         QuitterDéfaite_bouton = new javax.swing.JButton();
         Image_Perdu_label = new javax.swing.JLabel();
         You_died_label = new javax.swing.JLabel();
@@ -95,14 +94,6 @@ public class Ecran_Défaite extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Retour_EcranTitre_Défaite_bouton, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 490, -1, -1));
-
-        RelancerPartie_Défaite_bouton.setText("Relancer une partie");
-        RelancerPartie_Défaite_bouton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RelancerPartie_Défaite_boutonActionPerformed(evt);
-            }
-        });
-        getContentPane().add(RelancerPartie_Défaite_bouton, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 490, -1, -1));
 
         QuitterDéfaite_bouton.setText("Quitter");
         QuitterDéfaite_bouton.addActionListener(new java.awt.event.ActionListener() {
@@ -129,14 +120,6 @@ public class Ecran_Défaite extends javax.swing.JFrame {
         accueil.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Retour_EcranTitre_Défaite_boutonActionPerformed
-
-    private void RelancerPartie_Défaite_boutonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RelancerPartie_Défaite_boutonActionPerformed
-        // TODO add your handling code here:
-        Ecran_Jeu accueil = new Ecran_Jeu(10,10,5);
-        accueil.setLocationRelativeTo(this); 
-        accueil.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_RelancerPartie_Défaite_boutonActionPerformed
 
     private void QuitterDéfaite_boutonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuitterDéfaite_boutonActionPerformed
         // TODO add your handling code here:
@@ -173,7 +156,6 @@ public class Ecran_Défaite extends javax.swing.JFrame {
     private javax.swing.JLabel Défaite_label;
     private javax.swing.JLabel Image_Perdu_label;
     private javax.swing.JButton QuitterDéfaite_bouton;
-    private javax.swing.JButton RelancerPartie_Défaite_bouton;
     private javax.swing.JButton Retour_EcranTitre_Défaite_bouton;
     private javax.swing.JLabel You_died_label;
     // End of variables declaration//GEN-END:variables

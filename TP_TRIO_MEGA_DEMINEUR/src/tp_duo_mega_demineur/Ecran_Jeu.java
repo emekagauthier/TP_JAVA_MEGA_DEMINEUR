@@ -89,7 +89,6 @@ public class Ecran_Jeu extends javax.swing.JFrame {
     private void initComponents() {
 
         Retour_EcranTitre_Jeu_bouton = new javax.swing.JButton();
-        Relancer_Jeu_bouton = new javax.swing.JButton();
         Quitter_Jeu_bouton = new javax.swing.JButton();
         Titre_Jeu_label = new javax.swing.JLabel();
         FenêtrePrincipal_Jeu = new javax.swing.JPanel();
@@ -107,14 +106,6 @@ public class Ecran_Jeu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Retour_EcranTitre_Jeu_bouton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 520, -1, -1));
-
-        Relancer_Jeu_bouton.setText("Relancer");
-        Relancer_Jeu_bouton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Relancer_Jeu_boutonActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Relancer_Jeu_bouton, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 520, -1, -1));
 
         Quitter_Jeu_bouton.setText("Quitter");
         Quitter_Jeu_bouton.addActionListener(new java.awt.event.ActionListener() {
@@ -155,10 +146,6 @@ public class Ecran_Jeu extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_Retour_EcranTitre_Jeu_boutonActionPerformed
 
-    private void Relancer_Jeu_boutonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Relancer_Jeu_boutonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Relancer_Jeu_boutonActionPerformed
-
     private void Quitter_Jeu_boutonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Quitter_Jeu_boutonActionPerformed
         // TODO add your handling code here:
         this.dispose();
@@ -193,7 +180,6 @@ public class Ecran_Jeu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel FenêtrePrincipal_Jeu;
     private javax.swing.JButton Quitter_Jeu_bouton;
-    private javax.swing.JButton Relancer_Jeu_bouton;
     private javax.swing.JButton Retour_EcranTitre_Jeu_bouton;
     private javax.swing.JLabel Titre_Jeu_label;
     // End of variables declaration//GEN-END:variables
