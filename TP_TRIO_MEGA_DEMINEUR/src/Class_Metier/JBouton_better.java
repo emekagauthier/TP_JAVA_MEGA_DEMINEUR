@@ -14,25 +14,32 @@ import javax.swing.JButton;
 public class JBouton_better extends JButton {
 
 //Attribut
-    
-private int coordonne_x ;
-private int coordonne_y ;
-private Cellule C_reference;
+    private int coordonne_x;
+    private int coordonne_y;
+    private Cellule C_reference;
 
-    public JBouton_better(int coordonne_x, int coordonne_y, Cellule C_reference ) {
+    public JBouton_better(int coordonne_x, int coordonne_y, Cellule C_reference) {
         this.coordonne_x = coordonne_x;
         this.coordonne_y = coordonne_y;
         this.C_reference = C_reference;
     }
-    
-    @Override
-    protected void paintComponent(Graphics g){
-        if (C_reference.getdevoilee()==true){
-            g.drawString("CC",coordonne_x,coordonne_y);
-        }
-        
-    }
 
-    
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        if (C_reference.getdevoilee() == false) {
+            setText("?");
+        }
+        if (C_reference.getPresenceBombe() == true && C_reference.getdevoilee() == true) {
+            setText("b");
+        }
+        if (C_reference.getNbBombesAdjacentes() > 0 && C_reference.getdevoilee() == true && C_reference.getPresenceBombe() == false) {
+            setText(Integer.toString(C_reference.getNbBombesAdjacentes()));
+        }
+        if (C_reference.getdevoilee() == true && C_reference.getPresenceBombe() == false && C_reference.getNbBombesAdjacentes() == 0) {
+            setText("");
+        }
+
+    }
 
 }
