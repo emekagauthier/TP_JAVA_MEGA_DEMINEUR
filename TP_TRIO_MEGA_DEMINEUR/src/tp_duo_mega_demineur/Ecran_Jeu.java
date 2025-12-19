@@ -19,21 +19,27 @@ import javax.swing.JFrame;
  */
 public class Ecran_Jeu extends javax.swing.JFrame {
     JFrame a;
-    GrilleDeJeu game = new GrilleDeJeu(10, 10, 5);
+    
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Ecran_Jeu.class.getName());
-
+    int nblignes ;
+    int nbcolones;
+    int nbbombes;
     /**
      * Creates new form Ecran_Jeu
      */
-    public Ecran_Jeu() {
+    public Ecran_Jeu(int nblignes,int nbcolones, int nbbombes) {
         a=this;
+        this.nblignes = nblignes;
+        this.nbcolones = nbcolones;
+        this.nbbombes = nbbombes;
+        GrilleDeJeu game = new GrilleDeJeu(this.nblignes,this.nbcolones, this.nbbombes);
         initComponents();
 
         game.placerBombesAleatoirement();
         game.calculerBombesAdjacentes();
 
-        int nbLignes = game.getNbLignes();
-        int nbColonnes = game.getNbColonnes();
+        int nbLignes = this.nblignes;
+        int nbColonnes = this.nbcolones;
 
         FenêtrePrincipal_Jeu.setLayout(new GridLayout(nbLignes, nbColonnes));
         for (int i = 0; i < nbLignes; i++) {
@@ -181,7 +187,7 @@ public class Ecran_Jeu extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new Ecran_Jeu().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new Ecran_Jeu(10,10,5).setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

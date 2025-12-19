@@ -126,7 +126,7 @@ public class Ecran_Victoire extends javax.swing.JFrame {
 
     private void RelancerPartie_Victoire_boutonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RelancerPartie_Victoire_boutonActionPerformed
         // TODO add your handling code here:
-        Ecran_Jeu accueil = new Ecran_Jeu();
+        Ecran_Jeu accueil = new Ecran_Jeu(10,10,5);
         accueil.setLocationRelativeTo(this); 
         accueil.setVisible(true);
         this.dispose();
