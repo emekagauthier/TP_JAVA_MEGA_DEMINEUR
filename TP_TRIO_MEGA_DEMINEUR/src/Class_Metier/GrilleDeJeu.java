@@ -54,8 +54,8 @@ public class GrilleDeJeu {
     public void placerBombesAleatoirement() {
         int compteur = 0;
         while (compteur != nbBombes) {
-            int i = (int) (Math.random() * nbColonnes);
-            int j = (int) (Math.random() * nbLignes);
+            int j = (int) (Math.random() * nbColonnes);
+            int i = (int) (Math.random() * nbLignes);
             while (grille[i][j].getPresenceBombe() == true) {
                 i = (int) (Math.random() * nbColonnes);
                 j = (int) (Math.random() * nbLignes);
