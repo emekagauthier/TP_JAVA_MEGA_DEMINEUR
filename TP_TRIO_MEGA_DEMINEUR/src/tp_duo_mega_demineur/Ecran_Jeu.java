@@ -11,13 +11,14 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 
 /**
  *
  * @author Alexander
  */
 public class Ecran_Jeu extends javax.swing.JFrame {
-
+    JFrame a;
     GrilleDeJeu game = new GrilleDeJeu(10, 10, 5);
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Ecran_Jeu.class.getName());
 
@@ -25,6 +26,7 @@ public class Ecran_Jeu extends javax.swing.JFrame {
      * Creates new form Ecran_Jeu
      */
     public Ecran_Jeu() {
+        a=this;
         initComponents();
 
         game.placerBombesAleatoirement();
@@ -44,10 +46,25 @@ public class Ecran_Jeu extends javax.swing.JFrame {
 
                     @Override
                     public void actionPerformed(ActionEvent e) {
-
+                        
                         game.revelerCellule(x, y);
+                        
                         System.out.println(game);
                         FenêtrePrincipal_Jeu.repaint();
+                        if (game.toutesCellulesRevelees()=="perdu"){
+                            Ecran_Défaite defaite = new Ecran_Défaite();
+                            defaite.setLocationRelativeTo(a);
+                            defaite.setVisible(true);
+                            a.dispose();
+                                
+                            
+                        }
+                        if(game.toutesCellulesRevelees()=="gagné"){
+                           Ecran_Victoire victoire = new Ecran_Victoire();
+                            victoire.setLocationRelativeTo(a);
+                            victoire.setVisible(true);
+                            a.dispose(); 
+                        }
                     }
                 };
                 bouton_cellule.addActionListener(ecouteurClick);
