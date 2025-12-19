@@ -71,7 +71,6 @@ public class Ecran_Victoire extends javax.swing.JFrame {
 
         Victoire_label = new javax.swing.JLabel();
         Retour_EcranTitre_Victoire_bouton = new javax.swing.JButton();
-        RelancerPartie_Victoire_bouton = new javax.swing.JButton();
         QuitterVictoire_bouton = new javax.swing.JButton();
         YouDroppedThis_label = new javax.swing.JLabel();
 
@@ -92,14 +91,6 @@ public class Ecran_Victoire extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Retour_EcranTitre_Victoire_bouton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 460, -1, -1));
-
-        RelancerPartie_Victoire_bouton.setText("Relancer une partie");
-        RelancerPartie_Victoire_bouton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RelancerPartie_Victoire_boutonActionPerformed(evt);
-            }
-        });
-        getContentPane().add(RelancerPartie_Victoire_bouton, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 460, -1, -1));
 
         QuitterVictoire_bouton.setText("Quitter");
         QuitterVictoire_bouton.addActionListener(new java.awt.event.ActionListener() {
@@ -123,14 +114,6 @@ public class Ecran_Victoire extends javax.swing.JFrame {
         accueil.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Retour_EcranTitre_Victoire_boutonActionPerformed
-
-    private void RelancerPartie_Victoire_boutonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RelancerPartie_Victoire_boutonActionPerformed
-        // TODO add your handling code here:
-        Ecran_Jeu accueil = new Ecran_Jeu(10,10,5);
-        accueil.setLocationRelativeTo(this); 
-        accueil.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_RelancerPartie_Victoire_boutonActionPerformed
 
     private void QuitterVictoire_boutonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuitterVictoire_boutonActionPerformed
         // TODO add your handling code here:
@@ -165,7 +148,6 @@ public class Ecran_Victoire extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton QuitterVictoire_bouton;
-    private javax.swing.JButton RelancerPartie_Victoire_bouton;
     private javax.swing.JButton Retour_EcranTitre_Victoire_bouton;
     private javax.swing.JLabel Victoire_label;
     private javax.swing.JLabel YouDroppedThis_label;
