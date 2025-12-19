@@ -17,6 +17,7 @@ public class Ecran_Titre extends javax.swing.JFrame {
     /**
      * Creates new form Ecran_Titre
      */
+    
     public Ecran_Titre() {
         initComponents();
         setLocationRelativeTo(null);
