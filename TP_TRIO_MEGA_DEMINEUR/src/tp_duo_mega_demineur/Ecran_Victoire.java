@@ -17,7 +17,7 @@ public class Ecran_Victoire extends javax.swing.JFrame {
      */
     public Ecran_Victoire() {
         initComponents();
-        setImageToLabelKeepRatio(YouDroppedThis_label, "/Images/YouDroppedThis.jpg");
+        setImageToLabelKeepRatio(YouDroppedThis_label, "/Images/YouDroppedThis.png");
     }
     private void setImageToLabelKeepRatio(javax.swing.JLabel label, String resourcePath) {
         java.net.URL url = getClass().getResource(resourcePath);
