@@ -28,5 +28,4 @@ public class TP_DUO_MEGA_DEMINEUR {
         System.out.println(game);
 
     }
-
 }
