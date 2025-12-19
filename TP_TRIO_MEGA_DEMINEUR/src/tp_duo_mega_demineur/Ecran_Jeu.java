@@ -4,6 +4,7 @@
  */
 package tp_duo_mega_demineur;
 import Class_Metier.Cellule;
+import Class_Metier.GrilleDeJeu;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 
@@ -12,7 +13,7 @@ import javax.swing.JButton;
  * @author Alexander
  */
 public class Ecran_Jeu extends javax.swing.JFrame {
-
+    GrilleDeJeu game = new GrilleDeJeu(10, 10, 5);
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Ecran_Jeu.class.getName());
 
     /**
@@ -25,7 +26,7 @@ public class Ecran_Jeu extends javax.swing.JFrame {
         FenêtrePrincipal_Jeu.setLayout(new GridLayout(nbLignes, nbColonnes));
         for (int i = 0; i < nbLignes; i++) {
             for (int j = 0; j < nbColonnes; j++) {
-                Cellule bouton_cellule = new Cellule(); // création d'un bouton instance Cellule
+                JButton bouton_cellule = new JButton(); // création d'un bouton instance Cellule
                 FenêtrePrincipal_Jeu.add(bouton_cellule); // ajout au Jpanel PanneauGrille 
             }
         }

@@ -10,7 +10,7 @@ import javax.swing.JButton;
  *
  * @author emeka
  */
-public class Cellule extends JButton {
+public class Cellule {
 // Attribut principaux Class Cellule 
 private boolean Presence_Bombe;
 private boolean devoilee ;
