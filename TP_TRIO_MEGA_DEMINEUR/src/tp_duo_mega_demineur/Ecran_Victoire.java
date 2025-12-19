@@ -17,7 +17,7 @@ public class Ecran_Victoire extends javax.swing.JFrame {
      */
     public Ecran_Victoire() {
         initComponents();
-        setImageToLabelKeepRatio(YouDroppedThis_label, "/Images/YouDroppedThis.png");
+        //setImageToLabelKeepRatio(YouDroppedThis_label, "/Images/YouDroppedThis.png");
     }
     private void setImageToLabelKeepRatio(javax.swing.JLabel label, String resourcePath) {
         java.net.URL url = getClass().getResource(resourcePath);
@@ -72,7 +72,6 @@ public class Ecran_Victoire extends javax.swing.JFrame {
         Victoire_label = new javax.swing.JLabel();
         Retour_EcranTitre_Victoire_bouton = new javax.swing.JButton();
         QuitterVictoire_bouton = new javax.swing.JButton();
-        YouDroppedThis_label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 600));
@@ -99,10 +98,6 @@ public class Ecran_Victoire extends javax.swing.JFrame {
             }
         });
         getContentPane().add(QuitterVictoire_bouton, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 460, -1, -1));
-
-        YouDroppedThis_label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/YouDropThis.jpg"))); // NOI18N
-        YouDroppedThis_label.setText("YouDropThis_label");
-        getContentPane().add(YouDroppedThis_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, 280, 250));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -150,6 +145,5 @@ public class Ecran_Victoire extends javax.swing.JFrame {
     private javax.swing.JButton QuitterVictoire_bouton;
     private javax.swing.JButton Retour_EcranTitre_Victoire_bouton;
     private javax.swing.JLabel Victoire_label;
-    private javax.swing.JLabel YouDroppedThis_label;
     // End of variables declaration//GEN-END:variables
 }

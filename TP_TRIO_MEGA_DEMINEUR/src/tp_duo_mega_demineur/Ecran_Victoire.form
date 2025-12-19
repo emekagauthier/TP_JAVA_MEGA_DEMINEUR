@@ -73,18 +73,5 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="YouDroppedThis_label">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Images/YouDropThis.jpg"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="YouDropThis_label"/>
-      </Properties>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="410" y="160" width="280" height="250"/>
-        </Constraint>
-      </Constraints>
-    </Component>
   </SubComponents>
 </Form>
