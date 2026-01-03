@@ -16,11 +16,13 @@ public class GrilleDeJeu {
     private int nbColonnes;
     private Cellule[][] grille;
     private int nbBombes;
+    private int nbvie;
 
     public GrilleDeJeu(int nbLignes, int nbColonnes, int nbBombes) {
         this.nbLignes = nbLignes;
         this.nbColonnes = nbColonnes;
         this.nbBombes = nbBombes;
+        this.nbvie = 3;
         this.grille = new Cellule[nbLignes][nbColonnes];
         for (int i = 0; i < nbLignes; i++) {
             for (int j = 0; j < nbColonnes; j++) {
@@ -100,13 +102,16 @@ public class GrilleDeJeu {
         return grille[i][j].getPresenceBombe();
     }
 
+    
     public String toutesCellulesRevelees() {
         int val = (nbLignes * nbColonnes) - nbBombes;
         int nb = 0;
+        int nb_bombe_devoile=0;
         for (int i = 0; i < nbLignes; i++) {
             for (int j = 0; j < nbColonnes; j++) {
-                if (grille[i][j].getdevoilee() == true & getPresenceBombe(i, j) == true) {
-                    return "perdu";
+                if (grille[i][j].getdevoilee() == true & getPresenceBombe(i, j) == true ) {
+                    nb_bombe_devoile+=1;
+                    
                 }
                 if (grille[i][j].getdevoilee() == true & getPresenceBombe(i, j) == false) {
                     nb += 1;
@@ -117,7 +122,13 @@ public class GrilleDeJeu {
         if (nb == val) {
             return "gagné";
         }
-        return "pas fini";
+        if(nb_bombe_devoile==nbvie){
+           return "perdu";
+        }
+        int resu=nbvie-nb_bombe_devoile;
+        return resu+"" ;
+        
+        
     }
 
     //Methode Reveler Cellule

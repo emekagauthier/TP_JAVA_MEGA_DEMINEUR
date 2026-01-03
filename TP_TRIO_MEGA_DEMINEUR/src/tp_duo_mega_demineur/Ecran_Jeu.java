@@ -71,6 +71,9 @@ public class Ecran_Jeu extends javax.swing.JFrame {
                             victoire.setVisible(true);
                             a.dispose(); 
                         }
+                        else{
+                            nb_de_vie.setText(game.toutesCellulesRevelees());
+                        }
                     }
                 };
                 bouton_cellule.addActionListener(ecouteurClick);
@@ -92,6 +95,8 @@ public class Ecran_Jeu extends javax.swing.JFrame {
         Quitter_Jeu_bouton = new javax.swing.JButton();
         Titre_Jeu_label = new javax.swing.JLabel();
         FenêtrePrincipal_Jeu = new javax.swing.JPanel();
+        txt_nb_de_vie = new javax.swing.JLabel();
+        nb_de_vie = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 600));
@@ -134,6 +139,12 @@ public class Ecran_Jeu extends javax.swing.JFrame {
         );
 
         getContentPane().add(FenêtrePrincipal_Jeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, -1, -1));
+
+        txt_nb_de_vie.setText("Vies :");
+        getContentPane().add(txt_nb_de_vie, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 530, -1, -1));
+
+        nb_de_vie.setText("3");
+        getContentPane().add(nb_de_vie, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 530, 20, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -182,5 +193,7 @@ public class Ecran_Jeu extends javax.swing.JFrame {
     private javax.swing.JButton Quitter_Jeu_bouton;
     private javax.swing.JButton Retour_EcranTitre_Jeu_bouton;
     private javax.swing.JLabel Titre_Jeu_label;
+    private javax.swing.JLabel nb_de_vie;
+    private javax.swing.JLabel txt_nb_de_vie;
     // End of variables declaration//GEN-END:variables
 }
