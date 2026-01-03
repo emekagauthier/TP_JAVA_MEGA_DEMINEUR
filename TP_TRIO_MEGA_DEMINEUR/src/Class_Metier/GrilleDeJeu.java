@@ -24,7 +24,7 @@ public class GrilleDeJeu {
         this.nbLignes = nbLignes;
         this.nbColonnes = nbColonnes;
         this.nbBombes = nbBombes;
-        this.nbvie = 10;
+        this.nbvie = 3;
         this.nbkit=0;
         this.grille = new Cellule[nbLignes][nbColonnes];
         for (int i = 0; i < nbLignes; i++) {
