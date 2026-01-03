@@ -148,20 +148,28 @@ public class Ecran_Jeu extends javax.swing.JFrame {
 
         getContentPane().add(FenêtrePrincipal_Jeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, -1, -1));
 
+        txt_nb_de_vie.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
         txt_nb_de_vie.setText("Vies :");
-        getContentPane().add(txt_nb_de_vie, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 530, -1, -1));
+        txt_nb_de_vie.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 51)));
+        getContentPane().add(txt_nb_de_vie, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 90, 50));
 
+        nb_de_vie.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
         nb_de_vie.setText("3");
-        getContentPane().add(nb_de_vie, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 530, 20, -1));
+        getContentPane().add(nb_de_vie, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 40, 50));
 
+        txt_Kit_desamorcage.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
         txt_Kit_desamorcage.setText("Kit :");
-        getContentPane().add(txt_Kit_desamorcage, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 530, -1, -1));
+        txt_Kit_desamorcage.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
+        getContentPane().add(txt_Kit_desamorcage, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 90, 30));
 
+        nb_kit_desamorcage.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
         nb_kit_desamorcage.setText("0");
-        getContentPane().add(nb_kit_desamorcage, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 530, 10, -1));
+        getContentPane().add(nb_kit_desamorcage, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 30, 50));
 
+        txt_info_possession_kit.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
         txt_info_possession_kit.setText("Decouvert : NON");
-        getContentPane().add(txt_info_possession_kit, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 550, -1, -1));
+        txt_info_possession_kit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 51)));
+        getContentPane().add(txt_info_possession_kit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

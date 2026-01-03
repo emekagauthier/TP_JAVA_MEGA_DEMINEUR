@@ -159,6 +159,7 @@ public class Ecran_Titre extends javax.swing.JFrame {
             );
             return;
         }
+        
         Ecran_Jeu accueil = new Ecran_Jeu(nbLignes,nbColonnes,nbBombes);
         accueil.setLocationRelativeTo(this);
         accueil.setVisible(true);
