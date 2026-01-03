@@ -37,6 +37,7 @@ public class Ecran_Jeu extends javax.swing.JFrame {
 
         game.placerBombesAleatoirement();
         game.calculerBombesAdjacentes();
+        game.placerkitDeminage();
 
         int nbLignes = this.nblignes;
         int nbColonnes = this.nbcolones;
@@ -53,7 +54,7 @@ public class Ecran_Jeu extends javax.swing.JFrame {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         
-                        game.revelerCellule(x, y);
+                        game.InteractionCellule(x, y);
                         
                         System.out.println(game);
                         FenêtrePrincipal_Jeu.repaint();
@@ -73,6 +74,10 @@ public class Ecran_Jeu extends javax.swing.JFrame {
                         }
                         else{
                             nb_de_vie.setText(game.toutesCellulesRevelees());
+                            nb_kit_desamorcage.setText(game.getnbkit() +"");
+                            if(game.InteractionCellule(x, y).equals("K")){
+                               txt_info_possession_kit.setText("Decouvert : OUI ");
+                            }
                         }
                     }
                 };
@@ -97,6 +102,9 @@ public class Ecran_Jeu extends javax.swing.JFrame {
         FenêtrePrincipal_Jeu = new javax.swing.JPanel();
         txt_nb_de_vie = new javax.swing.JLabel();
         nb_de_vie = new javax.swing.JLabel();
+        txt_Kit_desamorcage = new javax.swing.JLabel();
+        nb_kit_desamorcage = new javax.swing.JLabel();
+        txt_info_possession_kit = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 600));
@@ -146,6 +154,15 @@ public class Ecran_Jeu extends javax.swing.JFrame {
         nb_de_vie.setText("3");
         getContentPane().add(nb_de_vie, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 530, 20, -1));
 
+        txt_Kit_desamorcage.setText("Kit :");
+        getContentPane().add(txt_Kit_desamorcage, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 530, -1, -1));
+
+        nb_kit_desamorcage.setText("0");
+        getContentPane().add(nb_kit_desamorcage, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 530, 10, -1));
+
+        txt_info_possession_kit.setText("Decouvert : NON");
+        getContentPane().add(txt_info_possession_kit, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 550, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -194,6 +211,9 @@ public class Ecran_Jeu extends javax.swing.JFrame {
     private javax.swing.JButton Retour_EcranTitre_Jeu_bouton;
     private javax.swing.JLabel Titre_Jeu_label;
     private javax.swing.JLabel nb_de_vie;
+    private javax.swing.JLabel nb_kit_desamorcage;
+    private javax.swing.JLabel txt_Kit_desamorcage;
+    private javax.swing.JLabel txt_info_possession_kit;
     private javax.swing.JLabel txt_nb_de_vie;
     // End of variables declaration//GEN-END:variables
 }

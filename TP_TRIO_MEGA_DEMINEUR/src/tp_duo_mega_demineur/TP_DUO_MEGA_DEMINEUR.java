@@ -20,6 +20,7 @@ public class TP_DUO_MEGA_DEMINEUR {
         GrilleDeJeu game = new GrilleDeJeu(10, 10, 5);
         game.placerBombesAleatoirement();
         game.calculerBombesAdjacentes();
+        game.placerkitDeminage();
         for (int i=0;i<10;i++){
             for(int j=0;j<10;j++){
                 game.revelerCellule(i, j);

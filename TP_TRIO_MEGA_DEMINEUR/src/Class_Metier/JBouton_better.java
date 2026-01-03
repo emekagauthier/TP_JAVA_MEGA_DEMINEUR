@@ -31,12 +31,18 @@ public class JBouton_better extends JButton {
             setText("?");
         }
         if (C_reference.getPresenceBombe() == true && C_reference.getdevoilee() == true) {
-            setText("b");
+            setText("B");
         }
-        if (C_reference.getNbBombesAdjacentes() > 0 && C_reference.getdevoilee() == true && C_reference.getPresenceBombe() == false) {
+        if(C_reference.getPresenceKitdeminage() == true && C_reference.getdevoilee() == true) {
+            setText("K");
+        }
+        if(C_reference.getdesamorce() == true && C_reference.getdevoilee() == true) {
+            setText("D");
+        }
+        if (C_reference.getNbBombesAdjacentes() > 0 && C_reference.getdevoilee() == true && C_reference.getPresenceBombe() == false && C_reference.getPresenceKitdeminage() == false && C_reference.getdesamorce() == false ) {
             setText(Integer.toString(C_reference.getNbBombesAdjacentes()));
         }
-        if (C_reference.getdevoilee() == true && C_reference.getPresenceBombe() == false && C_reference.getNbBombesAdjacentes() == 0) {
+        if (C_reference.getdevoilee() == true && C_reference.getPresenceBombe() == false && C_reference.getNbBombesAdjacentes() == 0 && C_reference.getPresenceKitdeminage() == false && C_reference.getdesamorce() == false) {
             setText("");
         }
 

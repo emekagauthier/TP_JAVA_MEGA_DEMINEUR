@@ -11,18 +11,21 @@ import Class_Metier.Cellule;
  * @author emeka
  */
 public class GrilleDeJeu {
-
+// Attributs
     private int nbLignes;
     private int nbColonnes;
     private Cellule[][] grille;
     private int nbBombes;
     private int nbvie;
-
+    private int nbkit;
+    
+//Constructeur
     public GrilleDeJeu(int nbLignes, int nbColonnes, int nbBombes) {
         this.nbLignes = nbLignes;
         this.nbColonnes = nbColonnes;
         this.nbBombes = nbBombes;
-        this.nbvie = 3;
+        this.nbvie = 10;
+        this.nbkit=0;
         this.grille = new Cellule[nbLignes][nbColonnes];
         for (int i = 0; i < nbLignes; i++) {
             for (int j = 0; j < nbColonnes; j++) {
@@ -46,13 +49,17 @@ public class GrilleDeJeu {
     public Cellule[][] getgrille() {
         return grille;
     }
-    
+    public int getnbkit(){
+        return nbkit;
+    }
     public String getValueCellule(int x , int y ){
         
         return grille[x][y] +"";
         
     }
-
+   
+        
+    
     public void placerBombesAleatoirement() {
         int compteur = 0;
         while (compteur != nbBombes) {
@@ -66,6 +73,16 @@ public class GrilleDeJeu {
             compteur++;
         }
     }
+     public void placerkitDeminage(){
+            int j = (int) (Math.random() * nbColonnes);
+            int i = (int) (Math.random() * nbLignes);
+            while (grille[i][j].getPresenceBombe() == true) {
+                i = (int) (Math.random() * nbColonnes);
+                j = (int) (Math.random() * nbLignes);
+            }
+            grille[i][j].placerkit();
+            
+        }
 
     public void calculerBombesAdjacentes() {
         for (int x = 0; x < nbLignes; x++) {
@@ -101,7 +118,9 @@ public class GrilleDeJeu {
     public boolean getPresenceBombe(int i, int j) {
         return grille[i][j].getPresenceBombe();
     }
-
+    public boolean getPresencekit(int i, int j) {
+        return grille[i][j].getPresenceKitdeminage();
+    }
     
     public String toutesCellulesRevelees() {
         int val = (nbLignes * nbColonnes) - nbBombes;
@@ -130,18 +149,35 @@ public class GrilleDeJeu {
         
         
     }
-
+    //Methode Cellule sur lequel le joeur clic
+    public String InteractionCellule(int ligne, int colonne){
+        if(getPresencekit(ligne, colonne)==true && grille[ligne][colonne].getdevoilee()==false ){
+           grille[ligne][colonne].revelerCellule();
+           nbkit+=1;
+           return "K";
+        }
+        else{
+            revelerCellule(ligne, colonne);
+            return "";
+        }
+            
+    }
+          
     //Methode Reveler Cellule
     public void revelerCellule(int ligne, int colonne) {
-        if (grille[ligne][colonne].getdevoilee() == true) {
+        if (grille[ligne][colonne].getdevoilee() == true || getPresencekit(ligne, colonne)==true) {
             //case deja devoilé
         } else {
             grille[ligne][colonne].revelerCellule();
             if (getPresenceBombe(ligne, colonne) == true) {
-                //j'ai perdu mais quoi envoyer comme signal 
+                grille[ligne][colonne].useKit(nbkit);
+                if (grille[ligne][colonne].useKit(nbkit)==true){
+                    nbkit-=1;
+                }
+                
 
             }
-            if (getPresenceBombe(ligne, colonne) == false && grille[ligne][colonne].getNbBombesAdjacentes() == 0) {
+            if (getPresenceBombe(ligne, colonne) == false && grille[ligne][colonne].getNbBombesAdjacentes() == 0 ) {
                 
                 //Case a Gauche
                 if ((colonne - 1) >= 0) {
