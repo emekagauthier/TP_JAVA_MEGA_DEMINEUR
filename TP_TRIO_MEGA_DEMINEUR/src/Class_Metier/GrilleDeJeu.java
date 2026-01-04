@@ -118,12 +118,15 @@ public class GrilleDeJeu {
     public boolean getPresenceBombe(int i, int j) {
         return grille[i][j].getPresenceBombe();
     }
+    public boolean getPresencedesamorcé(int i, int j) {
+        return grille[i][j].getdesamorce();
+    }
     public boolean getPresencekit(int i, int j) {
         return grille[i][j].getPresenceKitdeminage();
     }
     
     public String toutesCellulesRevelees() {
-        int val = (nbLignes * nbColonnes) - nbBombes;
+        int val = (nbLignes * nbColonnes) - nbBombes; 
         int nb = 0;
         int nb_bombe_devoile=0;
         for (int i = 0; i < nbLignes; i++) {
@@ -132,13 +135,12 @@ public class GrilleDeJeu {
                     nb_bombe_devoile+=1;
                     
                 }
-                if (grille[i][j].getdevoilee() == true & getPresenceBombe(i, j) == false) {
+                if (grille[i][j].getdevoilee() == true & getPresenceBombe(i, j) == false & getPresencedesamorcé(i, j)==false ) {
                     nb += 1;
                 }
-
             }
         }
-        if (nb == val) {
+        if (nb == val ) {
             return "gagné";
         }
         if(nb_bombe_devoile==nbvie){
@@ -177,6 +179,7 @@ public class GrilleDeJeu {
                 
 
             }
+            else{    
             if (getPresenceBombe(ligne, colonne) == false && grille[ligne][colonne].getNbBombesAdjacentes() == 0 ) {
                 
                 //Case a Gauche
@@ -213,7 +216,7 @@ public class GrilleDeJeu {
                 }
 
             }
-
+            }
         }
     }
 
